@@ -35,22 +35,21 @@ console.log(longest);
 
 
 
-// Iteration #3: Calculate the sum
-const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
-function sumNumbers() {
-  let result=0;
-  for (let i=0; i<numbers.length; i++) {
-    console.log(i);
-    result += numbers[i];
-    console.log(result);
+// Iteration 3
+
+const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
+let sum= 0;
+
+function sumNumbers (arr){
+  for (let i = 0; i < arr.length; i++) {
+  sum += arr[i]
   }
-  console.log(result)
-   return result;
+  return sum
 }
 
-sumNumbers(numbers)
-
+let end = sumNumbers(numbers)
+console.log(end)
 
 
 // Iteration #3.1 Bonus:
