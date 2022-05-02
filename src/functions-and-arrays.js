@@ -36,20 +36,22 @@ console.log(longest);
 
 
 // Iteration #3: Calculate the sum
-const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
-function sumNumbers() {
+
+function sumNumbers(someArr) {
   let result=0;
-  for (let i=0; i<numbers.length; i++) {
+  if (someArr.length<1){
+  longestWord=null;
+}
+  for (let i=0; i<someArr.length; i++) {
     console.log(i);
-    result += numbers[i];
+    result += someArr[i];
     console.log(result);
   }
   console.log(result)
    return result;
 }
 
-sumNumbers(numbers)
 
 
 
