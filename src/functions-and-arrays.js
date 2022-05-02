@@ -51,15 +51,26 @@ function sumNumbers(someArr) {
   console.log(result)
    return result;
 }
-
-
-
-
 // Iteration #3.1 Bonus:
-function sum() {}
-
-
-
+function sum(someArr){
+  let mixResult=0;
+  for (let i=0; i<someArr.length;i++){
+    //console.log(i)
+    if (typeof someArr[i] === 'number'){
+      mixResult+=someArr[i];
+    }
+    else if (typeof someArr[i] === 'string'){
+      mixResult+=someArr[i].length;
+    }
+    else if (typeof someArr[i] === 'boolean'){
+      if (someArr[i] === true){
+        mixResult+=1;
+      }
+    }
+    console.log(mixResult);
+  }
+return mixResult;
+}
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
