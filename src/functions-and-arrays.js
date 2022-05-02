@@ -76,22 +76,58 @@ return mixResult;
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
 function averageNumbers(someArr) {
- return sumNumbers(someArr)/ someArr.length
- }
+  let result=0;
+  for (let i=0; i<someArr.length; i++) {
+    result += someArr[i]
+  }
+    result/=someArr.length
+    return result;
+}
+//level bonus
 
-averageNumbers(numbersAvg)
-let result = averageNumbers(numbersAvg)
-console.log(result);
+
+
+
 
 
 // Level 2: Array of strings
-const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
+const words = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 
-function averageWordLength() { }
+function averageWordLength(someArr) {
+  let result=0;
+  for (let i=0; i<someArr.length; i++) {
+    result += someArr[i].length
+    //console.log(i);
+    //console.log(result);
+  }
+  result/= someArr.length
+  //console.log(result);
+  return result;
+}
 
+averageWordLength(words) 
 // Bonus - Iteration #4.1
-function avg() {}
+const mixedArr = [6, 12, 'miami', 1, true, 'barca', '200', 'lisboa', 8, 10];
 
+function avg(someArr){
+  let result=0;
+  for (let i=0; i<someArr.length;i++){
+    //console.log(i)
+    if (typeof someArr[i] === 'number'){
+      result+=someArr[i];
+    }
+    else if (typeof someArr[i] === 'string'){
+      result+=someArr[i].length;
+    }
+    else if (typeof someArr[i] === 'boolean'){
+      if (someArr[i] === true){
+        result+=1;
+      }
+    }
+  }
+result /= someArr.length;
+return result;
+}
 // Iteration #5: Unique arrays
 const wordsUnique = [
   'crab',
