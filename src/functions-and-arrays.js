@@ -10,9 +10,6 @@ function maxOfTwoNumbers(num1, num2) {
  }
 
 // Iteration 2
-const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
-
-
 function findLongestWord(wordsarr) {
     let longestWord = ""; 
 if (wordsarr.length<1){
@@ -27,9 +24,6 @@ if (wordsarr.length<1){
       }
   return longestWord;
 }
-
-let longest = findLongestWord(words);
-console.log(longest);
 
 
 
@@ -55,7 +49,6 @@ function sumNumbers(someArr) {
 function sum(someArr){
   let mixResult=0;
   for (let i=0; i<someArr.length;i++){
-    //console.log(i)
     if (typeof someArr[i] === 'number'){
       mixResult+=someArr[i];
     }
@@ -77,42 +70,41 @@ const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
 function averageNumbers(someArr) {
   let result=0;
+  if (someArr.length<1){
+    return null;
+  }
   for (let i=0; i<someArr.length; i++) {
     result += someArr[i]
   }
     result/=someArr.length
     return result;
 }
-//level bonus
-
-
-
 
 
 
 // Level 2: Array of strings
-const words = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 
 function averageWordLength(someArr) {
   let result=0;
+  if (someArr.length<1){
+    return null;
+  }
   for (let i=0; i<someArr.length; i++) {
     result += someArr[i].length
-    //console.log(i);
-    //console.log(result);
   }
   result/= someArr.length
-  //console.log(result);
   return result;
 }
 
-averageWordLength(words) 
 // Bonus - Iteration #4.1
 const mixedArr = [6, 12, 'miami', 1, true, 'barca', '200', 'lisboa', 8, 10];
 
 function avg(someArr){
+  if (someArr.length<1){
+    return null;
+  }
   let result=0;
   for (let i=0; i<someArr.length;i++){
-    //console.log(i)
     if (typeof someArr[i] === 'number'){
       result+=someArr[i];
     }
@@ -129,7 +121,7 @@ result /= someArr.length;
 return result;
 }
 // Iteration #5: Unique arrays
-const wordsUnique = [
+const words = [
   'crab',
   'poison',
   'contagious',
@@ -143,7 +135,15 @@ const wordsUnique = [
   'bring'
 ];
 
-function uniquifyArray() {}
+function uniquifyArray(someArray) {
+  let cleanArray = [];
+ for (let i=0; i<someArray.length; i++){
+  if (cleanArray.indexOf(someArray[i]) === -1){
+    cleanArray.push(someArray[i]);
+  }
+ }
+  return cleanArray;
+}
 
 
 
