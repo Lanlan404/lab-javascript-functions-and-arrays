@@ -60,9 +60,11 @@ function sum(someArr){
         mixResult+=1;
       }
     }
-    console.log(mixResult);
+     else if (typeof someArr[i] === 'object' || 'array'){
+      throw new Error('${someArr[i] has not a valid type (number, string or boolean)');
+     }
   }
-return mixResult;
+  return mixResult;
 }
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
@@ -136,6 +138,9 @@ const words = [
 ];
 
 function uniquifyArray(someArray) {
+  if (someArray.length<1){
+    return null;
+  }
   let cleanArray = [];
  for (let i=0; i<someArray.length; i++){
   if (cleanArray.indexOf(someArray[i]) === -1){
