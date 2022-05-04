@@ -1,10 +1,8 @@
 // Iteration #1: Find the maximum
 function maxOfTwoNumbers(num1, num2) {
      if (num1>num2) {
-       console.log(num1)
        return num1
      } else {
-       console.log(num2)
        return num2
      }
  }
@@ -38,11 +36,8 @@ function sumNumbers(someArr) {
   longestWord=null;
 }
   for (let i=0; i<someArr.length; i++) {
-    console.log(i);
     result += someArr[i];
-    console.log(result);
   }
-  console.log(result)
    return result;
 }
 // Iteration #3.1 Bonus:
@@ -61,7 +56,7 @@ function sum(someArr){
       }
     }
      else if (typeof someArr[i] === 'object' || 'array'){
-      throw new Error('${someArr[i] has not a valid type (number, string or boolean)');
+      throw new Error("Unsupported data type sir or ma'am");
      }
   }
   return mixResult;
@@ -120,6 +115,7 @@ function avg(someArr){
     }
   }
 result /= someArr.length;
+result = Number(result.toFixed(2))
 return result;
 }
 // Iteration #5: Unique arrays
@@ -153,28 +149,24 @@ function uniquifyArray(someArray) {
 
 
 // Iteration #6: Find elements
-const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
-
-function doesWordExist() {}
-
-
+function doesWordExist(anArray,aWord) {
+  if (anArray.length<1){
+    return null;
+  }
+  else {
+    return anArray.includes(aWord)
+  }
+}
 
 // Iteration #7: Count repetition
-const wordsCount = [
-  'machine',
-  'matter',
-  'subset',
-  'trouble',
-  'starting',
-  'matter',
-  'eating',
-  'matter',
-  'truth',
-  'disobedience',
-  'matter'
-];
-
-function howManyTimes() {}
+function howManyTimes(anArray,aWord) {
+  let result = 0
+  for (let i=0; i<anArray.length; i++)
+    if(anArray[i]===aWord){
+      result+=1
+    }
+    return result; 
+}
 
 
 
