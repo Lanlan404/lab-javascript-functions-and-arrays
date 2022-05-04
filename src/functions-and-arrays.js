@@ -9,66 +9,121 @@ function maxOfTwoNumbers(num1, num2) {
      }
  }
 
-// Iteration #2: Find longest word
-const words = ['mystery', 'brother', 'aviator', 'crocodile', 'crocodila', 'orchard', 'crackpot'];
+// Iteration 2
+function findLongestWord(wordsarr) {
+    let longestWord = ""; 
+if (wordsarr.length<1){
+  longestWord=null;
+}
+      for (let i = 0; i < wordsarr.length; i++) {
+          let mot = wordsarr[i];
 
-let longest = ""
-function findLongestWord() {
-  if (words.length <1 ) {
-    return null;  // return null for an empty array
-  }
-  for (let i=0; i < words.length; i++) {
-    console.log(i)
-    if (words[i].length > longest.length) { // check if word is longer than previous longest
-      longest=words[i]; 
-    }
-    console.log(longest)
-  }
-    return longest;
+          if (mot.length > longestWord.length) {
+            longestWord = mot;
+          }
+      }
+  return longestWord;
 }
 
 
 
-// Iteration #3: Calculate the sum
-const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
-function sumNumbers() {
+
+// Iteration #3: Calculate the sum
+
+
+function sumNumbers(someArr) {
   let result=0;
-  for (let i=0; i<numbers.length; i++) {
+  if (someArr.length<1){
+  longestWord=null;
+}
+  for (let i=0; i<someArr.length; i++) {
     console.log(i);
-    result += numbers[i];
+    result += someArr[i];
     console.log(result);
   }
   console.log(result)
    return result;
 }
-
-sumNumbers(numbers)
-
-
-
 // Iteration #3.1 Bonus:
-function sum() {}
-
-
-
+function sum(someArr){
+  let mixResult=0;
+  for (let i=0; i<someArr.length;i++){
+    if (typeof someArr[i] === 'number'){
+      mixResult+=someArr[i];
+    }
+    else if (typeof someArr[i] === 'string'){
+      mixResult+=someArr[i].length;
+    }
+    else if (typeof someArr[i] === 'boolean'){
+      if (someArr[i] === true){
+        mixResult+=1;
+      }
+    }
+     else if (typeof someArr[i] === 'object' || 'array'){
+      throw new Error('${someArr[i] has not a valid type (number, string or boolean)');
+     }
+  }
+  return mixResult;
+}
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
-function averageNumbers() {}
+function averageNumbers(someArr) {
+  let result=0;
+  if (someArr.length<1){
+    return null;
+  }
+  for (let i=0; i<someArr.length; i++) {
+    result += someArr[i]
+  }
+    result/=someArr.length
+    return result;
+}
+
 
 
 // Level 2: Array of strings
-const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 
-function averageWordLength() { }
+function averageWordLength(someArr) {
+  let result=0;
+  if (someArr.length<1){
+    return null;
+  }
+  for (let i=0; i<someArr.length; i++) {
+    result += someArr[i].length
+  }
+  result/= someArr.length
+  return result;
+}
 
 // Bonus - Iteration #4.1
-function avg() {}
+const mixedArr = [6, 12, 'miami', 1, true, 'barca', '200', 'lisboa', 8, 10];
 
+function avg(someArr){
+  if (someArr.length<1){
+    return null;
+  }
+  let result=0;
+  for (let i=0; i<someArr.length;i++){
+    if (typeof someArr[i] === 'number'){
+      result+=someArr[i];
+    }
+    else if (typeof someArr[i] === 'string'){
+      result+=someArr[i].length;
+    }
+    else if (typeof someArr[i] === 'boolean'){
+      if (someArr[i] === true){
+        result+=1;
+      }
+    }
+  }
+result /= someArr.length;
+return result;
+}
 // Iteration #5: Unique arrays
-const wordsUnique = [
+const words = [
   'crab',
   'poison',
   'contagious',
@@ -82,7 +137,18 @@ const wordsUnique = [
   'bring'
 ];
 
-function uniquifyArray() {}
+function uniquifyArray(someArray) {
+  if (someArray.length<1){
+    return null;
+  }
+  let cleanArray = [];
+ for (let i=0; i<someArray.length; i++){
+  if (cleanArray.indexOf(someArray[i]) === -1){
+    cleanArray.push(someArray[i]);
+  }
+ }
+  return cleanArray;
+}
 
 
 
